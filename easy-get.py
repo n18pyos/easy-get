@@ -12,4 +12,4 @@ def start_module(args):
 		print(get.text)
 	if args[0] == "post":
 		get = req.post(args[1], verify=certi.where())
-		print(get.text)e
+		print(get.text)
