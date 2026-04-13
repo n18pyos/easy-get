@@ -20,5 +20,10 @@ def start_module(args):
 		if len(args) < 3:
 			print("введите параметры запроса")
 			return
-		get = req.post(args[1], verify=certi.where(), data=args[2])
+		dat_dic = {}
+		for o in args[2:]:
+			if "=" in o:
+				k, v = o.split("=", 1)
+				dat_dic[k] = v
+		get = req.post(args[1], verify=certi.where(), data=dat_dic)
 		print(get.text)
