@@ -17,5 +17,8 @@ def start_module(args):
 		get = req.get(args[1], verify=certi.where())
 		print(get.text)
 	if args[0] == "post":
-		get = req.post(args[1], verify=certi.where())
+		if len(args) < 3:
+			print("введите параметры запроса")
+			return
+		get = req.post(args[1], verify=certi.where(), data=Args[3])
 		print(get.text)
