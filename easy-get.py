@@ -4,7 +4,13 @@ import certifi as certi
 info = "easy-get - программа для минимального взаимодействия с интернетом\n easy-get post/get (url)\n"
 
 def start_module(args):
-	if len(args) < 1 or not args[1]:
+	if len(args) < 1:
+		print("введите корректные аргументы")
+		return
+	if args[0] == "help":
+		print(info)
+		return
+	if len(args) < 2:
 		print("введите корректные аргументы")
 		return
 	if args[0] == "get":
