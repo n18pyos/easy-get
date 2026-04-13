@@ -1,9 +1,12 @@
 import requests as req
 import certifi as certi
+import shlex
 
+cavc = True
 info = "easy-get - программа для минимального взаимодействия с интернетом\n easy-get post/get (url)\n"
 
 def start_module(args):
+	args = shlex.split(args)[1:]
 	if len(args) < 1:
 		print("введите корректные аргументы")
 		return
